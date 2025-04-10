@@ -104,7 +104,7 @@
         
             &:invalid {
               border-color: $red;
-              background-image: url('img/invalid.svg');
+              background-image: url('../img/invalid.svg');
             }
         
             &:invalid ~ .error-message {
