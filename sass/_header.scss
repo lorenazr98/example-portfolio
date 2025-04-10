@@ -1,0 +1,195 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+header {
+    position: relative;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 60px;
+    }
+
+    @include breakpoint(desktop) {
+        margin-bottom: 104px;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: center;
+
+        .img-adamkeyes-mobile {
+            width: 174.21px;
+            margin-bottom: 40px;
+
+            @include breakpoint(tablet) {
+                display: none;
+            }
+        }
+
+        .img-adamkeyes-tablet {
+            display: none;
+
+            @include breakpoint(tablet) {
+                display: block;
+                margin-left: 0;
+            }
+
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+
+        .img-adamkeyes-desktop {
+            display: none;
+
+            @include breakpoint(desktop) {
+                display: inline-block;
+                margin-right: 140px;
+            }
+        }
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+
+        @include breakpoint(tablet) {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        h1.name-logo {
+            padding: 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: $white;
+
+            @include breakpoint(tablet) {
+                margin-left: 30px;
+            }
+
+            @include breakpoint(desktop) {
+                margin-left: 165px;
+            }
+        }
+    
+        .icons {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25.6px;
+
+            @include breakpoint(tablet) {
+                height: 25px;
+                margin-right: 30px;
+                margin-top: 30px;
+            }
+
+            @include breakpoint(desktop) {
+                margin-right: 165px;
+            }
+            
+            img:hover {
+                filter: brightness(0) saturate(100%) 
+                invert(76%) sepia(48%) saturate(688%) 
+                hue-rotate(110deg) brightness(98%) contrast(91%);
+            }
+        }
+    }
+    
+    .presentation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 16px;
+        margin-right: 16px;
+
+        @include breakpoint(tablet) {
+            align-items: start;
+            width: 445px;
+            margin-left: 32px;
+            margin-top: 90px;
+            position: absolute;
+            left: 10px;
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: 165px;
+            width: 50%;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+            color: $white;
+            line-height: 40px;
+            font-size: 40px;
+            font-weight: 700;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                font-size: 72px;
+                line-height: 72px;
+                margin-bottom: 60px;
+                margin-top: 90px;
+            }
+
+            @include breakpoint(desktop) {
+                margin-bottom: 43px;
+                font-size: 88px;
+                line-height: 88px;
+                letter-spacing: -2.5px;
+            }
+        }
+
+        .title-name {
+            span {
+                text-decoration: underline;
+                text-decoration-color: $green;
+                text-underline-offset: 5px;
+            }
+        }
+
+        p {
+            color: $light-grey;
+            text-align: center;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 500;
+            width: 343px;
+
+            @include breakpoint(tablet) {
+                text-align: start;
+                margin-bottom: 34px;
+            }
+
+            @include breakpoint(desktop) {
+                margin-bottom: 66px;
+                width: 55%;
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        a {
+            @include button-underline-green;
+            margin-bottom: 80px;
+
+            &:hover {
+                color: $green;
+            }
+        }
+
+
+    }
+}

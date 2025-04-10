@@ -1,0 +1,161 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.contact {
+    background-color: $dark-grey;
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 87px;
+
+    @include breakpoint(tablet) {
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+
+    @include breakpoint(desktop) {
+        display: flex;
+        flex-direction: row;
+        gap: 220px;
+    }
+
+    .container-contact-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1{
+        margin: 0;
+        color: $white;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+        text-align: center;
+
+        @include breakpoint(tablet){
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -2.05px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-bottom: 26px;
+        }
+    }
+    
+    p {
+        color: $light-grey;
+        width: 343px;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @include breakpoint(tablet) {
+            width: 445px;
+        }
+
+        @include breakpoint(desktop) {
+            text-align: start;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        margin-bottom: 83px;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(desktop) {
+            width: 50%;
+        }
+        
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid $light-grey;
+            background-color: $dark-grey;
+            font-family: $primary-font;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 26px;
+            letter-spacing: -0.22px;
+            color: white;
+            text-transform: uppercase;
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 40px;
+        
+            &:focus {
+              outline: none;
+            }
+        
+            &:invalid {
+              border-color: $red;
+              background-image: url('img/invalid.svg');
+            }
+        
+            &:invalid ~ .error-message {
+              display: block;
+            }
+          }
+
+        .input-wrapper {
+            position: relative;
+          }
+
+        .error-message {
+            display: none;
+            font-family: $primary-font;
+            color: $red;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.17px;
+            margin-top: 4px;
+            position: absolute;
+            right: 10px;
+            top: 70px;
+        }
+
+
+
+        textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid $light-grey;
+            background-color: $dark-grey;
+            font-family: $primary-font;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 26px;
+            letter-spacing: -0.22px;
+        }
+
+        #submit {
+            @include button-underline-green;
+            text-decoration: underline;
+            text-decoration-color: $green;
+            text-align: end;
+
+            &:hover {
+                color: $green;
+                cursor: pointer;
+            }
+        }
+    }
+}

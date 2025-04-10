@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.skills {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    @include breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-auto-rows: auto;
+        gap: 16px; 
+        margin-left: 32px;
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 165px;
+        margin-top: 72px;
+        margin-bottom: 100px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+        margin-bottom: 24px;
+
+        @include breakpoint(tablet) {
+            align-items: start;
+        }
+
+        .name-skill {
+            margin: 0;
+
+            @include breakpoint(tablet) {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 56px;
+                margin-bottom: 14px;
+            }
+        }
+
+        .years-skill {
+            margin:1px;
+
+            @include breakpoint(tablet) {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+    }
+}

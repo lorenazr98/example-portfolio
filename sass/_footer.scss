@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+footer {
+    background-color: $dark-grey;
+
+    .container-footer {
+        @include breakpoint(tablet){
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    }
+    
+    h1 {
+        padding: 0;
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: $white;
+        margin-bottom: 20px;
+        letter-spacing: -0.33px;
+
+        @include breakpoint(tablet) {
+            margin-left: 30px;
+            padding-top: 10px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: 165px;
+        }
+    }
+
+    .icons {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 25.6px; 
+        padding-bottom: 60px;
+
+        @include breakpoint(tablet) {
+            height: 25px;
+            margin-right: 30px;
+            margin-top: 30px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-right: 165px;
+        }
+
+        img:hover {
+            filter: brightness(0) saturate(100%) 
+            invert(76%) sepia(48%) saturate(688%) 
+            hue-rotate(110deg) brightness(98%) contrast(91%);
+        }
+    }
+}

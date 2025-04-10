@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'header';
+@use 'skills';
+@use 'projects';
+@use 'contact';
+@use 'footer';
+
+body {
+    background-color: $black;
+    background-image: url("img/background-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    font-family: $primary-font;
+
+    @include breakpoint(tablet) {
+        background-image: url("img/background-tablet.png");
+    }
+
+    @include breakpoint(desktop) {
+        background-image: url("img/background-desktop.png");
+    }
+
+    .linea-decorativa {
+        width: 90%;
+        height: 1px;
+        background-color: $light-grey;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include breakpoint(tablet) {
+            width: 92%;
+        }
+
+        @include breakpoint(desktop) {
+            width: 77%;
+        }
+    }
+
+    .linea-decorativa:nth-of-type(2) {
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+    .linea-decorativa:nth-of-type(3) {
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+}

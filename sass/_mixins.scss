@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+@mixin button-underline-green {
+    color: $white;
+    text-decoration-color: $green;
+    text-underline-offset: 15px;
+    letter-spacing: 2.29px;
+}
+
+@mixin button-underline-green-hover {
+    @include button-underline-green;
+    color: $green;
+}
+
+@mixin breakpoint($bp) {
+    @if $bp == tablet {
+      @media (min-width: $bp-tablet) {
+        @content;
+      }
+    }
+  
+    @if $bp == desktop {
+      @media (min-width: $bp-desktop) {
+        @content;
+      }
+    }
+  }
+  
